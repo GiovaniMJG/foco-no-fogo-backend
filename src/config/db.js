@@ -4,13 +4,13 @@ dotenv.config();
 
 const { Pool } = pkg;
 
-export const pool = new Pool({
+const pool = new Pool({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   database: process.env.DB_NAME,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  ssl: {
-    rejectUnauthorized: false   // 👈 OBRIGATÓRIO NO RENDER
-  }
+  ssl: { rejectUnauthorized: false } 
 });
+
+export default pool;
